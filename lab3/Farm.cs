@@ -57,9 +57,9 @@ public class Farm
         return PlantsOnGrowing.Remove(plant);
     }
 
-    public void SetNewFarmer(string firstName, string lastName, string specialization)
+    public void SetNewFarmer(string firstName, string lastName, string specialization, Farm farm)
     {
-        this.Farmer = new Farmer(firstName, lastName, specialization);
+        this.Farmer = new Farmer(firstName, lastName, specialization, farm);
     }
 }
 
