@@ -81,6 +81,7 @@ public record Potato : Plant
 public record Cibulya : Plant
 {
     
+    
     public Cibulya(string shortName, string fullName, int growingTime, bool isNeedRegrow)
         : base(shortName, fullName, growingTime, isNeedRegrow)
     {

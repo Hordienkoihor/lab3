@@ -43,6 +43,7 @@ public class Farmer
                                 farm.DeletePlant(grownCibulya);
                                 Cibulya newCibulya = new Cibulya(grownCibulya.ShortName, grownCibulya.FullName, grownCibulya.GrowingTime, true);
                                 farm.AddPlant(newCibulya);
+                                
                         }
                 }
                 

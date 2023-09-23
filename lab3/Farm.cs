@@ -37,6 +37,7 @@ public class Farm
             int index = PlantsOnGrowing.IndexOf(plant);
             if (index != -1)
             {
+                
                 PlantsOnGrowing[index].OnPlantGrown();
                 Console.WriteLine($"Plant {PlantsOnGrowing[index].ShortName} has grown!");
                 timer?.Dispose();

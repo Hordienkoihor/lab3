@@ -12,6 +12,7 @@ public class Run
             foreach (var plant in ferma.PlantsOnGrowing)
             {
                 
+                
                 Console.WriteLine($"Plant Name: {plant.ShortName}");
                 Console.WriteLine($"Full Name: {plant.FullName}");
                 Console.WriteLine($"Growing Time: {plant.GrowingTime}");
