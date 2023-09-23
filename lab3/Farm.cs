@@ -38,12 +38,12 @@ public class Farm
             var index = PlantsOnGrowing.IndexOf(plant);
             if (index != -1)
             {
-                var grownPlant = PlantsOnGrowing[index];
+                
             
                 
-                grownPlant.OnPlantGrown();
+                PlantsOnGrowing[index].OnPlantGrown();
             
-                Console.WriteLine($"Plant {grownPlant.ShortName} has grown!");
+                Console.WriteLine($"Plant {PlantsOnGrowing[index].ShortName} has grown!");
                 
                 timer?.Dispose();
             }
