@@ -30,7 +30,6 @@ public class Farm
         }
         
         PlantsOnGrowing.Add(plant);
-        PlantsOnGrowing.Add(plant);
         plant.PlantGrown += Farmer.HandlePlantGrown;
         Timer timer = null;
         timer = new Timer(_ =>
