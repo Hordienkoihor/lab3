@@ -30,19 +30,19 @@ public class Farmer
                         {
                                 Farm farm = this.farm;
                                 farm.DeletePlant(grownPotato);
-                                Carrot newCarrot = new Carrot(grownPotato.ShortName, grownPotato.FullName, grownPotato.GrowingTime, true);
-                                farm.AddPlant(newCarrot);
+                                // Potato newPotato = new Potato(grownPotato.ShortName, grownPotato.FullName, grownPotato.GrowingTime, true);
+                                farm.AddPlant(grownPotato with{IsNeedRegrow = false});
                         }
                 }
-                else if (e.Plant is Potato grownTavKakomMestePLantCeZapuc)
+                else if (e.Plant is Cibulya grownCibulya)
                 {
-                        Console.WriteLine($"Potato {grownTavKakomMestePLantCeZapuc.ShortName} has grown!");
-                        if (grownTavKakomMestePLantCeZapuc.IsNeedRegrow)
+                        Console.WriteLine($"Cibulya {grownCibulya.ShortName} has grown!");
+                        if (grownCibulya.IsNeedRegrow)
                         {
                                 Farm farm = this.farm;
-                                farm.DeletePlant(grownTavKakomMestePLantCeZapuc);
-                                Carrot newCarrot = new Carrot(grownTavKakomMestePLantCeZapuc.ShortName, grownTavKakomMestePLantCeZapuc.FullName, grownTavKakomMestePLantCeZapuc.GrowingTime, true);
-                                farm.AddPlant(newCarrot);
+                                farm.DeletePlant(grownCibulya);
+                                Cibulya newCibulya = new Cibulya(grownCibulya.ShortName, grownCibulya.FullName, grownCibulya.GrowingTime, true);
+                                farm.AddPlant(newCibulya);
                         }
                 }
                 

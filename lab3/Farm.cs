@@ -34,7 +34,7 @@ public class Farm
         Timer timer = null;
         timer = new Timer(_ =>
         {
-            var index = PlantsOnGrowing.IndexOf(plant);
+            int index = PlantsOnGrowing.IndexOf(plant);
             if (index != -1)
             {
                 PlantsOnGrowing[index].OnPlantGrown();

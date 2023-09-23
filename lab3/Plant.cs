@@ -78,10 +78,10 @@ public record Potato : Plant
     }
 }
 
-public record TavKakomMestePLantCeZapuc : Plant
+public record Cibulya : Plant
 {
     
-    public TavKakomMestePLantCeZapuc(string shortName, string fullName, int growingTime, bool isNeedRegrow)
+    public Cibulya(string shortName, string fullName, int growingTime, bool isNeedRegrow)
         : base(shortName, fullName, growingTime, isNeedRegrow)
     {
         
