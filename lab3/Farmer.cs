@@ -19,8 +19,8 @@ public class Farmer
                         {       
                                 Farm farm = this.farm;
                                 farm.DeletePlant(grownCarrot);
-                                Carrot newCarrot = new Carrot(grownCarrot.ShortName, grownCarrot.FullName, grownCarrot.GrowingTime, true);
-                                farm.AddPlant(newCarrot);
+                                // Carrot newCarrot = new Carrot(grownCarrot.ShortName, grownCarrot.FullName, grownCarrot.GrowingTime, true);
+                                farm.AddPlant(grownCarrot with{IsNeedRegrow = false, ShortName = grownCarrot.ShortName + "1"});
                         }
                 }
                 else if (e.Plant is Potato grownPotato)
@@ -41,8 +41,8 @@ public class Farmer
                         {
                                 Farm farm = this.farm;
                                 farm.DeletePlant(grownCibulya);
-                                Cibulya newCibulya = new Cibulya(grownCibulya.ShortName, grownCibulya.FullName, grownCibulya.GrowingTime, true);
-                                farm.AddPlant(newCibulya);
+                                // Cibulya newCibulya = new Cibulya(grownCibulya.ShortName, grownCibulya.FullName, grownCibulya.GrowingTime, true);
+                                farm.AddPlant(grownCibulya with{IsNeedRegrow = false});
                                 
                         }
                 }
