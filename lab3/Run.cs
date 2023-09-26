@@ -34,7 +34,8 @@ public class Run
             Console.WriteLine($"Is Need Regrow: {plant.IsNeedRegrow}");
             Console.WriteLine();
         }
-        
+        ferma.SetNewFarmer("buba", "boba", "megakrut", ferma);
+        Console.WriteLine(ferma.Farmer.FirstName);
     }
     
     

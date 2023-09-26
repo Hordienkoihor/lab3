@@ -49,7 +49,11 @@ namespace lab3;
             IsNeedRegrow = isNeedRegrow;
 
         }
-        
+
+        // public Plant setPlant(string shortName, string fullName, int growingTime, bool isNeedRegrow)
+        // {
+        //     return Plant(shortName, fullName, growingTime, isNeedRegrow);
+        // }
         public event EventHandler<PlantGrownEventArgs>? PlantGrown;
         
         internal virtual void OnPlantGrown()
