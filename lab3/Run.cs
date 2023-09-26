@@ -6,9 +6,8 @@ public class Run
     {   
         Farm ferma = new Farm("namee", 10);
         ferma.SetNewFarmer("Oleg", "Vlad", "Farmer", ferma);
-        ferma.AddPlant(new Carrot("bubulka", "bububulka", 10, true));
-        for (int i = 0; i < 10; i++)
-        {
+        ferma.AddPlant(new Carrot("bubulka", "bububulka", 10, true, true));
+        
             foreach (var plant in ferma.PlantsOnGrowing)
             {
                 
@@ -21,9 +20,9 @@ public class Run
             }
 
             
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(10000);
             
-        }
+        
         
         foreach (var plant in ferma.PlantsOnGrowing)
         {
@@ -36,6 +35,7 @@ public class Run
         }
         ferma.SetNewFarmer("buba", "boba", "megakrut", ferma);
         Console.WriteLine(ferma.Farmer.FirstName);
+        Console.WriteLine(ferma.PlantsOnGrowing[0].CanHarvest());
     }
     
     

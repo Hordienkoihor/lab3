@@ -40,13 +40,14 @@ namespace lab3;
         
       
         public bool IsNeedRegrow { get; set; }
-
-        protected Plant(string shortName, string fullName, int growingTime, bool isNeedRegrow)
+        public bool IsRipe { get; set; }
+        protected Plant(string shortName, string fullName, int growingTime, bool isNeedRegrow, bool isRipe)
         {
             ShortName = shortName;
             FullName = fullName;
             GrowingTime = growingTime;
             IsNeedRegrow = isNeedRegrow;
+            IsRipe = isRipe;
 
         }
 
@@ -60,24 +61,40 @@ namespace lab3;
         {
             PlantGrown?.Invoke(this, new PlantGrownEventArgs(this));
         }
+        public virtual bool CanHarvest()
+        {
+            
+            return IsRipe;
+        }
 
     }
 public record Carrot : Plant
 {
-    
-    public Carrot(string shortName, string fullName, int growingTime, bool isNeedRegrow)
-        : base(shortName, fullName, growingTime, isNeedRegrow)
+    public int Size { get; set; }
+    public Carrot(string shortName, string fullName, int growingTime, bool isNeedRegrow, bool isRipe)
+        : base(shortName, fullName, growingTime, isNeedRegrow,isRipe)
     {
-        
+        Size = growingTime * 2;
+    }
+
+    public override bool CanHarvest()
+    {   
+        return Size >= 10 && base.CanHarvest();
     }
 }
 
 public record Potato : Plant
 {
-    
-    public Potato(string shortName, string fullName, int growingTime, bool isNeedRegrow)
-        : base(shortName, fullName, growingTime, isNeedRegrow)
+    public bool FaynaKartoplya { get; set;}
+    public Potato(string shortName, string fullName, int growingTime, bool isNeedRegrow, bool isRipe, bool faynaKartoplya)
+        : base(shortName, fullName, growingTime, isNeedRegrow, isRipe)
     {
+        FaynaKartoplya = faynaKartoplya;
+    }
+
+    public override bool CanHarvest()
+    {
+        return FaynaKartoplya && base.CanHarvest();
         
     }
 }
@@ -86,8 +103,8 @@ public record Cibulya : Plant
 {
     
     
-    public Cibulya(string shortName, string fullName, int growingTime, bool isNeedRegrow)
-        : base(shortName, fullName, growingTime, isNeedRegrow)
+    public Cibulya(string shortName, string fullName, int growingTime, bool isNeedRegrow, bool isRipe)
+        : base(shortName, fullName, growingTime, isNeedRegrow, isRipe)
     {
         
     }
