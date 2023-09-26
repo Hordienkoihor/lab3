@@ -7,7 +7,8 @@ public class Run
         Farm ferma = new Farm("namee", 10);
         ferma.SetNewFarmer("Oleg", "Vlad", "Farmer", ferma);
         ferma.AddPlant(new Carrot("bubulka", "bububulka", 10, true, true));
-        
+        Console.WriteLine($"Farmers name {ferma.Farmer.FirstName}");
+        Console.WriteLine("Ovochi:");
             foreach (var plant in ferma.PlantsOnGrowing)
             {
                 
@@ -19,7 +20,7 @@ public class Run
                 Console.WriteLine();
             }
 
-            
+            Console.WriteLine("Rezultaty rosty: ");
             System.Threading.Thread.Sleep(10000);
             
         
@@ -33,8 +34,10 @@ public class Run
             Console.WriteLine($"Is Need Regrow: {plant.IsNeedRegrow}");
             Console.WriteLine();
         }
+        
         ferma.SetNewFarmer("buba", "boba", "megakrut", ferma);
-        Console.WriteLine(ferma.Farmer.FirstName);
+        Console.WriteLine($"New farmers name {ferma.Farmer.FirstName}");
+        Console.WriteLine("Test metoda na urojai(expected true: ");
         Console.WriteLine(ferma.PlantsOnGrowing[0].CanHarvest());
     }
     
