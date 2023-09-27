@@ -6,7 +6,7 @@ public class Farm
     public string Name { get; set; }
     public int PlantsLimit => _plantsLimit;
     public List<Plant> PlantsOnGrowing { get; }
-    public Farmer? Farmer { get; private set; }
+    public Farmer? Farmer { get; private set ; } //переписати на рослини
     
     public Farm() : this("Farm")
     {}
@@ -58,9 +58,9 @@ public class Farm
         return PlantsOnGrowing.Remove(plant);
     }
 
-    public void SetNewFarmer(string firstName, string lastName, string specialization, Farm farm)
+    public Farmer CreateNewFarmer(string firstName, string lastName, string specialization)
     {
-        this.Farmer = new Farmer(firstName, lastName, specialization, farm);
+        return this.Farmer = new Farmer(firstName, lastName, specialization, this);
     }
 }
 

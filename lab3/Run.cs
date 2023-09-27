@@ -5,7 +5,7 @@ public class Run
     static void Main()
     {   
         Farm ferma = new Farm("namee", 10);
-        ferma.SetNewFarmer("Oleg", "Vlad", "Farmer", ferma);
+        ferma.CreateNewFarmer("Oleg", "Vlad", "Farmer");
         ferma.AddPlant(new Carrot("bubulka", "bububulka", 10, true, true));
         Console.WriteLine($"Farmers name {ferma.Farmer.FirstName}");
         Console.WriteLine("Ovochi:");
@@ -36,7 +36,7 @@ public class Run
             Console.WriteLine();
         }
         
-        ferma.SetNewFarmer("buba", "boba", "megakrut", ferma);
+        ferma.CreateNewFarmer("buba", "boba", "megakrut");
         Console.WriteLine($"New farmers name {ferma.Farmer.FirstName}");
         Console.WriteLine("Test metoda na urojai(expected true: ");
         Console.WriteLine(ferma.PlantsOnGrowing[0].CanHarvest());
