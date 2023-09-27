@@ -6,8 +6,30 @@ public class Farm
     public string Name { get; set; }
     public int PlantsLimit => _plantsLimit;
     public List<Plant> PlantsOnGrowing { get; }
-    public Farmer? Farmer { get; private set ; } //переписати на рослини
+    public Farmer? Farmer { get { return _farmer; }
+        private set
+        {
+            if (_farmer != null)
+            {
+                foreach (var plant in PlantsOnGrowing)
+                {
+                    plant.PlantGrown -= _farmer.HandlePlantGrown;
+                }
+            }
+
+            _farmer = value;
+
+            if (_farmer != null)
+            {
+                foreach (var plant in PlantsOnGrowing)
+                {
+                    plant.PlantGrown += _farmer.HandlePlantGrown;
+                }
+            }
+        } 
+    } 
     
+    private Farmer? _farmer;
     public Farm() : this("Farm")
     {}
     public Farm(string name) : this(name, 20)
