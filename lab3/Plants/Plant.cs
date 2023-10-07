@@ -67,4 +67,4 @@ namespace lab3;
             return IsRipe;
         }
 
-    }
+    } //зробити непераджувану рослину
